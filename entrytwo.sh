@@ -1,6 +1,6 @@
-pip install setuptools>=70.0.0 --break-system-packages
+pip install --root-user-action=ignore setuptools>=70.0.0 > /dev/null
 
-pip install zipp>=3.19.1 --break-system-packages
+pip install --root-user-action=ignore zipp>=3.19.1 > /dev/null
 
 rm -fr sessions
 
