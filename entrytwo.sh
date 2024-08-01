@@ -1,6 +1,6 @@
-pip install --root-user-action=ignore setuptools>=70.0.0 > /dev/null
+pip install setuptools>=70.0.0 --break-system-packages
 
-pip install --root-user-action=ignore zipp>=3.19.1 > /dev/null
+pip install zipp>=3.19.1 --break-system-packages
 
 rm -fr sessions
 
@@ -17,10 +17,11 @@ export DBUS_SESSION_BUS_ADDRESS=/dev/null
 Xvfb $DISPLAY -screen 1 1280x800x8 -nolisten tcp &
 
 
-python /app/main.py -cv 126 -v
+python /app/main.py -cv 126 -v -g IN
 
 
 sleep 10
 
 
-python /app/main.py -cv 126 -v
+
+python /app/main.py -cv 126 -v -g IN
